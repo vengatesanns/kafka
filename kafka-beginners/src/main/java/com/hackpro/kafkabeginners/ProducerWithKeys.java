@@ -11,10 +11,9 @@ import java.util.concurrent.ExecutionException;
 public class ProducerWithKeys {
 
     public static void main(String[] args) throws ExecutionException, InterruptedException {
-        String bootstrapServers = "34.93.185.173:9092";
         // create properties
         Properties properties = new Properties();
-        properties.setProperty(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, bootstrapServers);
+        properties.setProperty(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, Config.SERVER_CONFIG);
         properties.setProperty(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class.getName());
         properties.setProperty(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, StringSerializer.class.getName());
         // create Kafka
